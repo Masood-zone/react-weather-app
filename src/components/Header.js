@@ -4,7 +4,7 @@ function Header() {
   return (
     <div className="navbar shadow">
       <div className="navbar-start">
-        <h1 className="text-xl btn btn-ghost">Kirito Weather Checker</h1>
+        <h1 className="text-3xl btn btn-ghost">Kirito Weather Checker</h1>
       </div>
       <div className="navbar-end">
         <button>

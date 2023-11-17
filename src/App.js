@@ -1,12 +1,12 @@
 import React from "react";
-import Home from "./pages/home";
 import Header from "./components/Header";
+import MainApp from "./pages/layout";
 
 const App = () => {
   return (
-    <div className="">
+    <div className="w-screen">
       <Header />
-      <Home />
+      <MainApp />
     </div>
   );
 };

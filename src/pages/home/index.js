@@ -1,24 +1,11 @@
-import axios from "axios";
 import React, { useState } from "react";
-import { API_KEY } from "../../root/root";
+import getCityWeather from "../../root/getCityDetails";
 
 function Home() {
   const [country, setCountry] = useState("");
   const [countryWeather, setCountryWeather] = useState({});
   const [loading, setLoading] = useState(false);
   const [icon, setIcon] = useState();
-
-  const getCityWeather = async (country) => {
-    const response = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${country}&appid=${API_KEY}&units=metric`
-    );
-    if (response.ok) {
-      return response.data;
-    }
-    console.log(response.data);
-    setIcon(response.data.weather[0].icon);
-    setCountryWeather(response.data);
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
