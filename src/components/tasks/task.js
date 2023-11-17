@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import AddTasks from "./AddTasks";
 import TaskTracker from "./TaskTracker";
 import TasksList from "./TasksList";
@@ -19,6 +18,9 @@ const Task = () => {
   const onAddTask = (e) => {
     e.preventDefault();
     // Append to Taskslist
+    if (!task) {
+      return alert("Please enter a task to fulfill");
+    }
     setTasksList((prevTask) => {
       return [
         ...prevTask,
@@ -44,14 +46,20 @@ const Task = () => {
     setTasksList(oldTasks);
   };
   return (
-    <div className="w-[500px] mx-auto my-4 flex items-center flex-col justify-center p-4 bg-rango-luxury text-rango-home-text rounded-lg">
-      <TaskTracker tasksList={tasksList} />
-      <AddTasks value={task} onChange={handleTaskChange} addTask={onAddTask} />
-      <TasksList
-        tasks={tasksList}
-        toggleTaskComplete={handleToggleTaskComplete}
-        onDelete={handleDelete}
-      />
+    <div className="w-[750px] rounded-xl bg-rango-luxury mt-8 mx-auto">
+      <div className="w-[500px] mx-auto py-4 flex items-center flex-col justify-center p-4  text-rango-home-text rounded-lg">
+        <TaskTracker tasksList={tasksList} />
+        <AddTasks
+          value={task}
+          onChange={handleTaskChange}
+          addTask={onAddTask}
+        />
+        <TasksList
+          tasks={tasksList}
+          toggleTaskComplete={handleToggleTaskComplete}
+          onDelete={handleDelete}
+        />
+      </div>
     </div>
   );
 };

@@ -1,6 +1,5 @@
 import React from "react";
 import { LuTrash } from "react-icons/lu";
-import { HiPencilSquare } from "react-icons/hi2";
 
 const TasksList = ({ tasks, toggleTaskComplete, onDelete }) => {
   return (
@@ -10,7 +9,7 @@ const TasksList = ({ tasks, toggleTaskComplete, onDelete }) => {
           return (
             <div
               key={task.id}
-              className="border-2 my-5 py-3 px-2 rounded-lg text-lg flex justify-between bg-rango-task text-rango-home-text"
+              className="border-2 my-5 py-3 px-2 rounded-lg text-lg flex justify-between bg-rango-task text-rango-home-text font-bold"
             >
               <div className="flex items-center gap-5">
                 <button
@@ -26,10 +25,6 @@ const TasksList = ({ tasks, toggleTaskComplete, onDelete }) => {
                 </p>
               </div>
               <div className="flex items-center">
-                <HiPencilSquare
-                  fontSize={28}
-                  className="hover:cursor-pointer"
-                />
                 <LuTrash
                   fontSize={28}
                   className="hover:cursor-pointer"
